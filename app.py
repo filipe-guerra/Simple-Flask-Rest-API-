@@ -1,5 +1,6 @@
 from flask import Flask
 from flask_restful import Resource, Api, abort, reqparse
+from db import *
 
 app = Flask(__name__)
 api = Api(app)
@@ -48,6 +49,7 @@ api.add_resource(returnDevices, '/<string:device_id>')
 api.add_resource(all_Devices, '/')
 
 
+
 #   todos os devices
 #   curl http://localhost:5000/
 
@@ -61,4 +63,4 @@ api.add_resource(all_Devices, '/')
 #   curl http://localhost:5000/ -d "status=somethig new" -X POST -v
 
 #   update a task
-#   curl http://localhost:5000/device3 -d "status=something different" -X PUT -v
+#   curl http://localhost:5000/device3 -d "status=on" -X PUT -v
